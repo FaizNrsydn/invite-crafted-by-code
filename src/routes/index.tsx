@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Reveal } from "@/components/invitation/Reveal";
+import { WishesForm } from "@/components/invitation/WishesForm";
 import {
   ACCOUNTS,
   CALENDAR_URL,
@@ -169,9 +170,8 @@ function Invitation() {
 
         {/* ============ SCENE 1 — Sampul pintu & wax seal ============ */}
         <section
-          className={`fixed inset-0 z-50 mx-auto flex max-w-[480px] transition-opacity duration-700 ${
-            opened ? "pointer-events-none opacity-0" : "opacity-100"
-          }`}
+          className={`fixed inset-0 z-50 mx-auto flex max-w-[480px] transition-opacity duration-700 ${opened ? "pointer-events-none opacity-0" : "opacity-100"
+            }`}
           aria-hidden={opened}
         >
           {[0, 1].map((side) => (
@@ -192,9 +192,8 @@ function Invitation() {
           ))}
 
           <div
-            className={`absolute inset-0 flex flex-col items-center justify-center px-8 text-center transition-opacity duration-500 ${
-              opened ? "opacity-0" : "opacity-100"
-            }`}
+            className={`absolute inset-0 flex flex-col items-center justify-center px-8 text-center transition-opacity duration-500 ${opened ? "opacity-0" : "opacity-100"
+              }`}
           >
             <p className="font-display text-xs tracking-[0.42em] text-primary-foreground/85">
               THE WEDDING OF
@@ -376,23 +375,26 @@ function Invitation() {
         </section>
 
         {/* ============ SCENE 4 — Gerbang batu & QS Ar-Rum 21 ============ */}
-        <section className="relative flex min-h-[85vh] items-center overflow-hidden">
+        <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden py-16">
           <img
             src={archway}
             alt=""
             width={720}
             height={1024}
             loading="lazy"
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
           />
-          <div className="relative z-10 w-full px-10 text-center">
+          <div className="relative z-10 mx-auto w-full max-w-[430px] px-6 text-center">
             <Reveal>
-              <p className="font-display text-[17px] italic leading-[1.9] text-foreground/90">
-                &ldquo;{QURAN.text}&rdquo;
-              </p>
-              <p className="mt-7 font-display text-sm tracking-[0.3em] text-sage-deep">
-                {QURAN.source}
-              </p>
+              <div className="rounded-2xl border border-border/75 bg-card/85 px-6 py-8 shadow-sm backdrop-blur-md">
+                <p className="font-display text-base sm:text-lg font-medium italic leading-relaxed text-foreground">
+                  &ldquo;{QURAN.text}&rdquo;
+                </p>
+                <div className="mx-auto my-5 h-px w-16 bg-sage/50" />
+                <p className="font-display text-xs font-semibold tracking-[0.25em] text-sage-deep">
+                  {QURAN.source}
+                </p>
+              </div>
             </Reveal>
           </div>
         </section>
@@ -472,11 +474,21 @@ function Invitation() {
                   <li key={n}>{n}</li>
                 ))}
               </ul>
-              <p className="mt-10 font-display text-sm italic text-muted-foreground">
+            </div>
+          </Reveal>
+
+          {/* ============ FORM KESAN & PESAN (BUKU TAMU) ============ */}
+          <Reveal className="mt-12 px-6">
+            <WishesForm onNotify={showToast} />
+          </Reveal>
+
+          <Reveal className="mt-14 px-8 text-center">
+            <div>
+              <p className="font-display text-sm italic text-muted-foreground">
                 Wassalamu&apos;alaikum Wr. Wb.
               </p>
               <p className="mt-10 font-script text-2xl text-sage">
-                {COUPLE.groom.short} &amp; {COUPLE.bride.short}
+                Save The Date
               </p>
             </div>
           </Reveal>
@@ -499,9 +511,8 @@ function Invitation() {
         <div
           role="status"
           aria-live="polite"
-          className={`pointer-events-none fixed bottom-24 left-1/2 z-50 -translate-x-1/2 rounded-full bg-cocoa px-5 py-2.5 font-display text-sm text-cocoa-foreground shadow-lg transition-all duration-300 ${
-            toast ? "opacity-100" : "translate-y-3 opacity-0"
-          }`}
+          className={`pointer-events-none fixed bottom-24 left-1/2 z-50 -translate-x-1/2 rounded-full bg-cocoa px-5 py-2.5 font-display text-sm text-cocoa-foreground shadow-lg transition-all duration-300 ${toast ? "opacity-100" : "translate-y-3 opacity-0"
+            }`}
         >
           {toast ?? ""}
         </div>

@@ -5,7 +5,7 @@ export const COUPLE = {
     parents: "Putra dari Bapak Iwan Triyadi & Ibu Sumaryani",
   },
   bride: {
-    name: "Fadhilah Rubabb",
+    name: "Fadhilah Rubab",
     short: "Fadhilah",
     parents: "Putri dari Bapak Santoso & Ibu Siti Asiah",
   },
@@ -24,7 +24,7 @@ export const EVENT = {
 };
 
 export const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Desa+Sindanglaut+Lemahabang+Cirebon";
+  "https://maps.app.goo.gl/JEtCz1PVcfy5AaYs6";
 
 export const CALENDAR_URL =
   "https://calendar.google.com/calendar/render?action=TEMPLATE" +
@@ -43,8 +43,12 @@ export const QURAN = {
 };
 
 export const ACCOUNTS = [
-  { bank: "BCA", number: "3041210069", holder: "Fadhilah Rubbab" },
+  { bank: "BCA", number: "3041210069", holder: "Fadhilah Rubab" },
   { bank: "BCA", number: "7745382151", holder: "Harish Triyadi" },
 ];
 
-export const FAMILY = ["Iwan Triyadi", "Sumaryani", "Abdul Wahab", "Siti Asiah"];
+export const FAMILY = ["Kel. Besar Bapak Iwan Triyadi & Ibu Sumaryani", "Kel. Besar Bapak Abdul Wahab & Ibu Siti Asiah (Brilink)"];
+
+// Masukkan Web App URL dari Google Apps Script di sini:
+export const SPREADSHEET_URL = "https://script.google.com/macros/s/AKfycbxAmuInOlKZkTThrBtUmvUx93j2LU6ayBYykeD84J-sAQE8mczstSMEGTBF8FtRHU3n/exec";
+
