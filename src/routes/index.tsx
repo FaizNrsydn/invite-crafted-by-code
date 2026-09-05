@@ -400,14 +400,14 @@ function Invitation() {
         {/* ============ SCENE 5 — Countdown ============ */}
         <section className="relative px-6 py-20">
           <Reveal>
-            <div className="relative mx-auto max-w-[400px] rounded-2xl border border-border/70 bg-card/70 px-4 py-8 backdrop-blur-[2px]">
+            <div className="relative mx-auto max-w-[420px] overflow-hidden rounded-2xl border border-border/70 bg-card/70 px-2 py-8 backdrop-blur-[2px]">
               <img
                 src={pines}
                 alt=""
                 width={512}
                 height={512}
                 loading="lazy"
-                className="pointer-events-none absolute -left-3 bottom-0 w-24 opacity-90"
+                className="pointer-events-none absolute -left-6 bottom-0 z-0 w-20 opacity-60"
               />
               <img
                 src={pines}
@@ -415,13 +415,16 @@ function Invitation() {
                 width={512}
                 height={512}
                 loading="lazy"
-                className="pointer-events-none absolute -right-3 bottom-0 w-24 -scale-x-100 opacity-90"
+                className="pointer-events-none absolute -right-6 bottom-0 z-0 w-20 -scale-x-100 opacity-60"
               />
-              <p className="mb-6 text-center font-display text-xs tracking-[0.34em] text-muted-foreground">
+              <p className="relative z-10 mb-6 text-center font-display text-xs tracking-[0.34em] text-muted-foreground">
                 MENUJU HARI BAHAGIA
               </p>
-              <Countdown />
+              <div className="relative z-10">
+                <Countdown />
+              </div>
             </div>
+
           </Reveal>
         </section>
 
